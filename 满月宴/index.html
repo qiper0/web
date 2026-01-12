@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>夏一宸 萌宝喜宴邀请函</title>
-    <!-- 微信/QQ分享缩略图：替换为你指定的GitHub宝宝图片链接 -->
+    <!-- 微信分享缩略图：你指定的GitHub宝宝图片 -->
     <meta property="og:type" content="image">
     <meta property="og:title" content="夏一宸萌宝喜宴 | 诚邀至亲相聚">
     <meta property="og:description" content="夏存祥敬邀您参加夏一宸萌宝喜宴，共贺稚喜，欢聚一堂！">
@@ -12,12 +12,12 @@
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:url" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/">
-    <!-- 微信专属强制识别，和上面缩略图保持一致 -->
+    <!-- 微信专属强制识别，确保缩略图必显 -->
     <meta name="wechat:image" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/%E5%A4%8F%E4%B8%80%E5%AE%B8%20(8).png">
     <meta name="description" content="夏存祥敬邀您参加夏一宸萌宝喜宴，共贺稚喜，欢聚一堂！">
-    <!-- Favicon替换为GitHub官方ICO图标，适配所有浏览器 -->
+    <!-- GitHub官方ICO图标 -->
     <link rel="icon" href="https://github.githubassets.com/favicons/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://github.githubassets.com/favicons/favicon.ico" type="image/x-icon">
 
     <style>
         * {
@@ -130,6 +130,7 @@
             border-radius: 8px;
             background-color: #fff0f5;
             border: 1px solid #ff69b4;
+            margin-top: 5px;
         }
 
         .nav-link:hover {
@@ -189,7 +190,7 @@
             <img class="img-item" src="夏一宸 (8).png" alt="宝宝照片8">
         </div>
         
-        <!-- 时间+微信内专属导航链接（一键唤起微信/高德地图） -->
+        <!-- 时间+导航核心更新：最新高德详细链接 + 微信地图引擎优先 -->
         <div class="info">
             <div class="info-item">
                 <span class="info-icon">🕙</span>
@@ -197,8 +198,11 @@
             </div>
             <div class="info-item">
                 <span class="info-icon">🏡</span>
-                <!-- 高德官方短链，微信内点击直接弹出导航选择 -->
-                <a href="https://surl.amap.com/5qiISG1BffH" class="nav-link" rel="noopener noreferrer" target="_blank">
+                <!-- 最新高德详细链接，微信内优先唤起微信地图引擎 -->
+                <a href="https://m.amap.com/poi/detail?__p=B0FFICXNR0%2C30.302768039243603%2C103.67874965071677%2C%E5%91%B3%E9%A6%99%E5%B1%85%E5%86%9C%E5%AE%B6%E4%B9%90%2C%E9%82%9B%E5%B4%83%E5%B8%82%E8%92%B2%E5%9B%9E%E8%B7%AF&src=app_share&userRelationToken=e9ff622eefd711f083c000163e129be81&share_type=url&share_from=poi_poi&share_from_type=AJX&share_bizParams=%7B%22poiid%22%3A%22B0FFICXNR0%22%2C%22trigger%22%3A%22click%22%2C%22is_rank%22%3A0%7D&share_lastClickSpm=amap.27854080.tipBar_RenderPOITipBar.shareBtn&share_bid=sbga1idfpjjbpfaea4jig9iapah7a520e50ca26&poiid=B0FFICXNR0" 
+                   class="nav-link" 
+                   rel="noopener noreferrer" 
+                   target="_blank">
                     地址：回龙味香居（点击直接导航）
                 </a>
             </div>
@@ -207,12 +211,16 @@
         <div class="signature">夏存祥 敬邀</div>
     </div>
 
-    <!-- 环境自动判断：微信内用高德短链，外部用系统原生geo协议导航 -->
+    <!-- 导航逻辑优化：微信内优先唤起微信地图引擎，外部用精准经纬度原生geo协议 -->
     <script>
         const navLink = document.querySelector('.nav-link');
         const isWechat = /MicroMessenger/i.test(navigator.userAgent);
-        const geoUrl = 'geo:30.429667,103.460500?q=邛崃市回龙镇莉香苑农庄 龙飞路159号';
-        // 非微信浏览器（手机自带/电脑）自动切换为原生geo协议，唤起系统地图
+        // 从你提供的链接中提取的精准经纬度：30.302768039243603, 103.67874965071677
+        const geoUrl = 'geo:30.302768,103.678750?q=邛崃市醉香居农家乐 廖家场镇藕回路';
+        
+        // 核心逻辑：
+        // 1. 微信内：使用最新高德详细链接，微信会自动优先调用内置地图引擎，次选高德地图
+        // 2. 非微信内：使用精准经纬度的原生geo协议，唤起系统地图
         if (!isWechat) {
             navLink.href = geoUrl;
             navLink.target = '_self';
