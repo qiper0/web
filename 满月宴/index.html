@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夏一宸 萌宝喜宴邀请函</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+
+        body {
+            background-color: #fdf2f8;
+            padding: 20px 0;
+        }
+
+        .invitation {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(255, 192, 203, 0.3);
+        }
+
+        /* 标题区域 */
+        .title {
+            text-align: center;
+            font-size: 22px;
+            color: #e53e3e;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* 喜字区域 */
+        .joy {
+            text-align: center;
+            font-size: 20px;
+            color: #d63384;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* 祝福语区域 */
+        .blessing {
+            text-align: center;
+            font-size: 18px;
+            color: #8a2be2;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* 宝宝信息 */
+        .baby-info {
+            text-align: center;
+            font-size: 24px;
+            color: #e53e3e;
+            font-weight: bold;
+            margin: 25px 0;
+            letter-spacing: 3px;
+        }
+
+        /* 邀请语 */
+        .invite-word {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* 图片区域 - 流式布局修改 */
+        .img-container {
+            /* 核心：使用flex流式布局，自动换行 */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+            /* 让容器内元素居中 */
+            justify-content: center;
+        }
+
+        .img-item {
+            border: 2px dashed #ff69b4;
+            border-radius: 10px;
+            /* 流式宽度：根据屏幕自动调整，最小150px，最大等分 */
+            flex: 1 1 calc(50% - 15px);
+            min-width: 150px;
+            max-width: calc(50% - 15px);
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff69b4;
+            font-size: 14px;
+            background-color: #fff0f5;
+            /* 图片适配 */
+            object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+        }
+
+        /* 时间地址区域 */
+        .info {
+            margin-top: 30px;
+            line-height: 2;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+
+        .info-icon {
+            margin-right: 10px;
+            color: #d63384;
+            font-size: 20px;
+        }
+
+        /* 导航链接样式 */
+        .nav-link {
+            color: #d63384;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 落款 */
+        .signature {
+            text-align: right;
+            font-size: 20px;
+            color: #333;
+            margin-top: 40px;
+            padding-right: 20px;
+        }
+
+        /* 适配小屏幕 */
+        @media (max-width: 480px) {
+            .img-item {
+                height: 150px;
+                /* 小屏幕下图片占满宽度 */
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .baby-info {
+                font-size: 20px;
+            }
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <!-- 标题 -->
+        <div class="title">因爱相聚 共贺萌娃之喜</div>
+        
+        <!-- 家有欢禧 -->
+        <div class="joy">✿ 家有欢禧 ✿</div>
+        
+        <!-- 祝福语 -->
+        <div class="blessing">
+            喜迎萌孙 福伴朝夕<br>
+            至亲相聚 共赴欢喜
+        </div>
+        
+        <!-- 宝宝信息 -->
+        <div class="baby-info">👶 夏一宸·萌宝喜宴 👶</div>
+        
+        <!-- 邀请语 -->
+        <div class="invite-word">亲爱的家人挚友💐诚邀莅临</div>
+        
+        <!-- 图片区域（8个预留位置）- 修正img标签写法 -->
+        <div class="img-container">
+            <img class="img-item" src="夏一宸 (1).png" alt="宝宝照片1">
+            <img class="img-item" src="夏一宸 (2).png" alt="宝宝照片2">
+            <img class="img-item" src="夏一宸 (3).png" alt="宝宝照片3">
+            <img class="img-item" src="夏一宸 (4).png" alt="宝宝照片4">
+            <img class="img-item" src="夏一宸 (5).png" alt="宝宝照片5">
+            <img class="img-item" src="夏一宸 (6).png" alt="宝宝照片6">
+            <img class="img-item" src="夏一宸 (7).png" alt="宝宝照片7">
+            <img class="img-item" src="夏一宸 (8).png" alt="宝宝照片8">
+        </div>
+        
+        <!-- 时间地址 -->
+        <div class="info">
+            <div class="info-item">
+                <span class="info-icon">🕙</span>
+                <span>时间：2026年2月7日 星期六 农历腊月二十</span>
+            </div>
+            <div class="info-item">
+                <span class="info-icon">🏡</span>
+                <!-- 高德地图导航链接 - 自动适配手机端（有高德APP打开APP，无则打开网页版） -->
+                <a href="amapuri://route/plan?daddr=邛崃市回龙镇味香居&dname=味香居&dev=0&t=0" 
+                   class="nav-link" 
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    地址：邛崃市回龙镇味香居（点击导航）
+                </a>
+                <!-- 备用微信/浏览器地图链接（如果高德链接失效会自动跳转这个） -->
+                <a href="https://amap.com/navigation?to=邛崃市回龙镇味香居&type=0" 
+                   class="nav-link" 
+                   style="display:none;"
+                   id="backup-nav"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    地址：邛崃市回龙镇味香居（点击导航）
+                </a>
+            </div>
+        </div>
+        
+        <!-- 落款 -->
+        <div class="signature">夏存祥 敬邀</div>
+    </div>
+
+    <!-- 适配不同设备的导航链接跳转脚本 -->
+    <script>
+        // 检测高德链接是否能打开，不能则跳转到网页版
+        document.querySelector('.nav-link').addEventListener('click', function(e) {
+            setTimeout(function() {
+                // 3秒后检测是否打开了APP，没打开则显示备用链接并跳转
+                document.getElementById('backup-nav').click();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
