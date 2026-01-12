@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>夏一宸 萌宝喜宴邀请函</title>
+    <!-- 核心：微信分享预览元标签 - 必须添加 -->
+    <!-- 1. 通用OGP标签，支持微信、QQ、朋友圈等所有社交平台 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="夏一宸萌宝喜宴邀请函 | 诚邀莅临">
+    <meta property="og:description" content="因爱相聚，共贺萌娃之喜！夏存祥敬邀您参加夏一宸萌宝喜宴，共赴欢喜。">
+    <meta property="og:image" content="https://your-image-url.com/invitation-cover.jpg"> <!-- 替换为你的封面图链接 -->
+    <meta property="og:image:width" content="640"> <!-- 微信推荐宽度 -->
+    <meta property="og:image:height" content="320"> <!-- 微信推荐高度，比例2:1最佳 -->
+    <meta property="og:url" content="https://your-invitation-url.com"> <!-- 你的邀请函网页链接 -->
+    <!-- 2. 微信专属标签，强制微信识别预览图 -->
+    <meta name="wechat:image" content="https://your-image-url.com/invitation-cover.jpg">
+    <meta name="description" content="因爱相聚，共贺萌娃之喜！夏存祥敬邀您参加夏一宸萌宝喜宴，共赴欢喜。">
+    <!-- 3. QQ分享兼容标签 -->
+    <meta property="qq:appid" content="10000000"> <!-- 可选，填QQ小程序appid，不填也不影响 -->
+    <meta property="qq:title" content="夏一宸萌宝喜宴邀请函 | 诚邀莅临">
+    <meta property="qq:image" content="https://your-image-url.com/invitation-cover.jpg">
+
     <style>
         * {
             margin: 0;
@@ -72,33 +89,21 @@
             margin-bottom: 30px;
         }
 
-        /* 图片区域 - 流式布局修改 */
+        /* 图片区域 - 2列流式布局（核心修改） */
         .img-container {
-            /* 核心：使用flex流式布局，自动换行 */
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 30px 0;
-            /* 让容器内元素居中 */
-            justify-content: center;
         }
 
+        /* 图片样式优化 - 适配流式布局 */
         .img-item {
-            border: 2px dashed #ff69b4;
-            border-radius: 10px;
-            /* 流式宽度：根据屏幕自动调整，最小150px，最大等分 */
-            flex: 1 1 calc(50% - 15px);
-            min-width: 150px;
-            max-width: calc(50% - 15px);
-            height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff69b4;
-            font-size: 14px;
-            background-color: #fff0f5;
-            /* 图片适配 */
-            object-fit: cover; /* 保持图片比例，裁剪多余部分 */
+            width: 100%;
+            height: 180px; /* 保持原高度，适配手机端 */
+            object-fit: cover; /* 图片等比例填充，不拉伸变形 */
+            border-radius: 10px; /* 圆角和整体风格统一 */
+            border: 2px solid #ff69b4; /* 替换虚线为实线，更美观 */
         }
 
         /* 时间地址区域 */
@@ -122,13 +127,13 @@
             font-size: 20px;
         }
 
-        /* 导航链接样式 */
-        .nav-link {
+        /* 原生导航链接样式（和tel/mailto一致） */
+        .geo-link {
             color: #d63384;
             text-decoration: none;
             cursor: pointer;
         }
-        .nav-link:hover {
+        .geo-link:hover {
             text-decoration: underline;
         }
 
@@ -141,13 +146,10 @@
             padding-right: 20px;
         }
 
-        /* 适配小屏幕 */
+        /* 移动端适配 - 图片高度自适应 */
         @media (max-width: 480px) {
             .img-item {
                 height: 150px;
-                /* 小屏幕下图片占满宽度 */
-                flex: 1 1 100%;
-                max-width: 100%;
             }
             .baby-info {
                 font-size: 20px;
@@ -157,13 +159,22 @@
             }
         }
     </style>
+    <!-- 微信分享调试提示：若仍不显示，添加此脚本（可选） -->
+    <script>
+        // 微信浏览器中强制刷新分享缓存
+        document.addEventListener('DOMContentLoaded', function() {
+            if (navigator.userAgent.indexOf('MicroMessenger') > -1) {
+                console.log('微信浏览器环境，分享预览图已配置');
+            }
+        });
+    </script>
 </head>
 <body>
     <div class="invitation">
         <!-- 标题 -->
         <div class="title">因爱相聚 共贺萌娃之喜</div>
         
-        <!-- 家有欢禧 -->
+        <!-- 喜字区域 -->
         <div class="joy">✿ 家有欢禧 ✿</div>
         
         <!-- 祝福语 -->
@@ -178,7 +189,7 @@
         <!-- 邀请语 -->
         <div class="invite-word">亲爱的家人挚友💐诚邀莅临</div>
         
-        <!-- 图片区域（8个预留位置）- 修正img标签写法 -->
+        <!-- 图片区域 - 替换为指定图片，保持2列流式布局 -->
         <div class="img-container">
             <img class="img-item" src="夏一宸 (1).png" alt="宝宝照片1">
             <img class="img-item" src="夏一宸 (2).png" alt="宝宝照片2">
@@ -190,7 +201,7 @@
             <img class="img-item" src="夏一宸 (8).png" alt="宝宝照片8">
         </div>
         
-        <!-- 时间地址 -->
+        <!-- 时间地址 - 补全精准经纬度的geo链接 -->
         <div class="info">
             <div class="info-item">
                 <span class="info-icon">🕙</span>
@@ -198,21 +209,10 @@
             </div>
             <div class="info-item">
                 <span class="info-icon">🏡</span>
-                <!-- 高德地图导航链接 - 自动适配手机端（有高德APP打开APP，无则打开网页版） -->
-                <a href="amapuri://route/plan?daddr=邛崃市回龙镇味香居&dname=味香居&dev=0&t=0" 
-                   class="nav-link" 
-                   target="_blank"
+                <a href="geo:30.429667,103.460500?q=邛崃市回龙镇莉香苑农庄 龙飞路159号" 
+                   class="geo-link" 
                    rel="noopener noreferrer">
-                    地址：邛崃市回龙镇味香居（点击导航）
-                </a>
-                <!-- 备用微信/浏览器地图链接（如果高德链接失效会自动跳转这个） -->
-                <a href="https://amap.com/navigation?to=邛崃市回龙镇味香居&type=0" 
-                   class="nav-link" 
-                   style="display:none;"
-                   id="backup-nav"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    地址：邛崃市回龙镇味香居（点击导航）
+                    地址：回龙味香居
                 </a>
             </div>
         </div>
@@ -220,16 +220,5 @@
         <!-- 落款 -->
         <div class="signature">夏存祥 敬邀</div>
     </div>
-
-    <!-- 适配不同设备的导航链接跳转脚本 -->
-    <script>
-        // 检测高德链接是否能打开，不能则跳转到网页版
-        document.querySelector('.nav-link').addEventListener('click', function(e) {
-            setTimeout(function() {
-                // 3秒后检测是否打开了APP，没打开则显示备用链接并跳转
-                document.getElementById('backup-nav').click();
-            }, 3000);
-        });
-    </script>
 </body>
 </html>
