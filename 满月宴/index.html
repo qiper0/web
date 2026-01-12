@@ -2,36 +2,35 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>夏一宸 萌宝喜宴邀请函</title>
-    <!-- 核心：微信分享预览元标签 - 必须添加 -->
-    <!-- 1. 通用OGP标签，支持微信、QQ、朋友圈等所有社交平台 -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="夏一宸萌宝喜宴邀请函 | 诚邀莅临">
-    <meta property="og:description" content="因爱相聚，共贺萌娃之喜！夏存祥敬邀您参加夏一宸萌宝喜宴，共赴欢喜。">
-    <meta property="og:image" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/%E5%A4%8F%E4%B8%80%E5%AE%B8%20(8).png"> <!-- 替换为你的封面图链接 -->
-    <meta property="og:image:width" content="640"> <!-- 微信推荐宽度 -->
-    <meta property="og:image:height" content="320"> <!-- 微信推荐高度，比例2:1最佳 -->
-    <meta property="og:url" content="https://your-invitation-url.com"> <!-- 你的邀请函网页链接 -->
-    <!-- 2. 微信专属标签，强制微信识别预览图 -->
-    <meta name="wechat:image" content="https://your-image-url.com/invitation-cover.jpg">
-    <meta name="description" content="因爱相聚，共贺萌娃之喜！夏存祥敬邀您参加夏一宸萌宝喜宴，共赴欢喜。">
-    <!-- 3. QQ分享兼容标签 -->
-    <meta property="qq:appid" content="10000000"> <!-- 可选，填QQ小程序appid，不填也不影响 -->
-    <meta property="qq:title" content="夏一宸萌宝喜宴邀请函 | 诚邀莅临">
-    <meta property="qq:image" content="https://your-image-url.com/invitation-cover.jpg">
+    <!-- 微信/QQ分享缩略图：替换为你指定的GitHub宝宝图片链接 -->
+    <meta property="og:type" content="image">
+    <meta property="og:title" content="夏一宸萌宝喜宴 | 诚邀至亲相聚">
+    <meta property="og:description" content="夏存祥敬邀您参加夏一宸萌宝喜宴，共贺稚喜，欢聚一堂！">
+    <meta property="og:image" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/%E5%A4%8F%E4%B8%80%E5%AE%B8%20(8).png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/">
+    <!-- 微信专属强制识别，和上面缩略图保持一致 -->
+    <meta name="wechat:image" content="https://qiper0.github.io/web/%E6%BB%A1%E6%9C%88%E5%AE%B4/%E5%A4%8F%E4%B8%80%E5%AE%B8%20(8).png">
+    <meta name="description" content="夏存祥敬邀您参加夏一宸萌宝喜宴，共贺稚喜，欢聚一堂！">
+    <!-- Favicon替换为GitHub官方ICO图标，适配所有浏览器 -->
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://github.githubassets.com/favicon.ico" type="image/x-icon">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+            font-family: "微软雅黑", "黑体", sans-serif;
         }
 
         body {
             background-color: #fdf2f8;
             padding: 20px 0;
+            touch-action: manipulation;
         }
 
         .invitation {
@@ -43,7 +42,6 @@
             box-shadow: 0 4px 15px rgba(255, 192, 203, 0.3);
         }
 
-        /* 标题区域 */
         .title {
             text-align: center;
             font-size: 22px;
@@ -53,7 +51,6 @@
             letter-spacing: 2px;
         }
 
-        /* 喜字区域 */
         .joy {
             text-align: center;
             font-size: 20px;
@@ -62,7 +59,6 @@
             font-weight: 600;
         }
 
-        /* 祝福语区域 */
         .blessing {
             text-align: center;
             font-size: 18px;
@@ -71,7 +67,6 @@
             margin-bottom: 20px;
         }
 
-        /* 宝宝信息 */
         .baby-info {
             text-align: center;
             font-size: 24px;
@@ -81,7 +76,6 @@
             letter-spacing: 3px;
         }
 
-        /* 邀请语 */
         .invite-word {
             text-align: center;
             font-size: 18px;
@@ -89,7 +83,7 @@
             margin-bottom: 30px;
         }
 
-        /* 图片区域 - 2列流式布局（核心修改） */
+        /* 8张宝宝图 - 2列流式布局，适配所有设备 */
         .img-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -97,13 +91,12 @@
             margin: 30px 0;
         }
 
-        /* 图片样式优化 - 适配流式布局 */
         .img-item {
             width: 100%;
-            height: 180px; /* 保持原高度，适配手机端 */
-            object-fit: cover; /* 图片等比例填充，不拉伸变形 */
-            border-radius: 10px; /* 圆角和整体风格统一 */
-            border: 2px solid #ff69b4; /* 替换虚线为实线，更美观 */
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ff69b4;
         }
 
         /* 时间地址区域 */
@@ -117,8 +110,9 @@
         .info-item {
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .info-icon {
@@ -127,14 +121,19 @@
             font-size: 20px;
         }
 
-        /* 原生导航链接样式（和tel/mailto一致） */
-        .geo-link {
-            color: #d63384;
+        /* 导航链接样式 - 醒目喜庆，点击感强 */
+        .nav-link {
+            color: #e53e3e;
             text-decoration: none;
-            cursor: pointer;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background-color: #fff0f5;
+            border: 1px solid #ff69b4;
         }
-        .geo-link:hover {
-            text-decoration: underline;
+
+        .nav-link:hover {
+            background-color: #ffe6ef;
         }
 
         /* 落款 */
@@ -146,7 +145,7 @@
             padding-right: 20px;
         }
 
-        /* 移动端适配 - 图片高度自适应 */
+        /* 移动端适配，贴合手机显示 */
         @media (max-width: 480px) {
             .img-item {
                 height: 150px;
@@ -157,39 +156,28 @@
             .title {
                 font-size: 20px;
             }
+            .info-item {
+                font-size: 16px;
+            }
+            .nav-link {
+                font-size: 16px;
+                padding: 4px 8px;
+            }
         }
     </style>
-    <!-- 微信分享调试提示：若仍不显示，添加此脚本（可选） -->
-    <script>
-        // 微信浏览器中强制刷新分享缓存
-        document.addEventListener('DOMContentLoaded', function() {
-            if (navigator.userAgent.indexOf('MicroMessenger') > -1) {
-                console.log('微信浏览器环境，分享预览图已配置');
-            }
-        });
-    </script>
 </head>
 <body>
     <div class="invitation">
-        <!-- 标题 -->
         <div class="title">因爱相聚 共贺萌娃之喜</div>
-        
-        <!-- 喜字区域 -->
         <div class="joy">✿ 家有欢禧 ✿</div>
-        
-        <!-- 祝福语 -->
         <div class="blessing">
             喜迎萌孙 福伴朝夕<br>
             至亲相聚 共赴欢喜
         </div>
-        
-        <!-- 宝宝信息 -->
         <div class="baby-info">👶 夏一宸·萌宝喜宴 👶</div>
-        
-        <!-- 邀请语 -->
         <div class="invite-word">亲爱的家人挚友💐诚邀莅临</div>
         
-        <!-- 图片区域 - 替换为指定图片，保持2列流式布局 -->
+        <!-- 8张宝宝图片 - 流式2列布局，直接使用 -->
         <div class="img-container">
             <img class="img-item" src="夏一宸 (1).png" alt="宝宝照片1">
             <img class="img-item" src="夏一宸 (2).png" alt="宝宝照片2">
@@ -201,7 +189,7 @@
             <img class="img-item" src="夏一宸 (8).png" alt="宝宝照片8">
         </div>
         
-        <!-- 时间地址 - 补全精准经纬度的geo链接 -->
+        <!-- 时间+微信内专属导航链接（一键唤起微信/高德地图） -->
         <div class="info">
             <div class="info-item">
                 <span class="info-icon">🕙</span>
@@ -209,17 +197,26 @@
             </div>
             <div class="info-item">
                 <span class="info-icon">🏡</span>
-                <a href="geo:30.429667,103.460500?q=邛崃市回龙镇莉香苑农庄 龙飞路159号" 
-                   class="geo-link" 
-                   rel="noopener noreferrer">
-                    地址：回龙味香居
+                <!-- 高德官方短链，微信内点击直接弹出导航选择 -->
+                <a href="https://surl.amap.com/5qiISG1BffH" class="nav-link" rel="noopener noreferrer" target="_blank">
+                    地址：回龙味香居（点击直接导航）
                 </a>
             </div>
         </div>
         
-        <!-- 落款 -->
         <div class="signature">夏存祥 敬邀</div>
     </div>
-</body>
 
+    <!-- 环境自动判断：微信内用高德短链，外部用系统原生geo协议导航 -->
+    <script>
+        const navLink = document.querySelector('.nav-link');
+        const isWechat = /MicroMessenger/i.test(navigator.userAgent);
+        const geoUrl = 'geo:30.429667,103.460500?q=邛崃市回龙镇莉香苑农庄 龙飞路159号';
+        // 非微信浏览器（手机自带/电脑）自动切换为原生geo协议，唤起系统地图
+        if (!isWechat) {
+            navLink.href = geoUrl;
+            navLink.target = '_self';
+        }
+    </script>
+</body>
 </html>
